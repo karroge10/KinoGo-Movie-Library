@@ -5,7 +5,8 @@ export const options = [
     },
     {
         "id": 12,
-        "name": "Adventure"
+        "name": "Adventure",
+        'placeholder': 'genre'
     },
     {
         "id": 16,

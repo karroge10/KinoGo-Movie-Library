@@ -5,6 +5,7 @@
 html, body {
   margin: 0;
   padding: 0;
+  min-height: 100vh;
   width: 100%;
   background-color: rgba(26, 25, 29, 0.808);
 	overflow-x: hidden;
@@ -16,19 +17,20 @@ html, body {
   flex-direction: column;
   align-items: center;
 }
-.movies-container{
-  margin-top: 50px;
-  width: 80%;
-  max-width: 1500px;
-}
+
 .search-container{
   display: flex;
-  margin-top: 100px
+  flex-direction: column;
+  margin-top: 80px
 }
+.search-and-genre{
+  display: flex;
+  justify-content: center;
+}
+
 .input-search{
-  width: 500px;
+  width: 100%;
   border-radius: 15px;
-  margin-right: 50px;
   border: none;
   outline: none;
   padding: 5px 20px;
@@ -41,43 +43,50 @@ html, body {
 }
 .form-container{
   display: flex;
+  width: 90%;
+  margin-right: 30px;
 }
 .genre-changer{
   color: rgba(242, 247, 246, 0.9);
-  margin: 2px 0;
+  margin: 2px 10px;
 }
 
 .genre{
   margin: 0;
-  color:#8cddbebe;
+  color:#71dbb2be;
 }
 .css-gw0fbg-InputComponent{
   width: calc(5ch + 10px) !important;
 }
 
 .react-dropdown-select-input::placeholder{
-  color:#8cddbebe!important;
+  color:#71dbb2be !important;
   font-size: 16px !important;
 }
+
 .react-dropdown-select-dropdown-handle{
   font-size: 10px !important;
+  margin: -2px 0px 0px 10px!important;
 }
 .react-dropdown-select-content{
-  color:#8cddbebe !important;
+  color:#71dbb2be !important;
+  -ms-flex-wrap: nowrap !important;
+  flex-wrap: nowrap !important;
 }
 .css-wmw4vi-ReactDropdownSelect {
   border: none !important;
   outline: none !important;
   box-shadow: none !important;
 }
-.css-148o527-ItemComponent {
+.react-dropdown-select-item{
   color: rgba(242, 247, 246, 0.9) !important;
   font-size: 14px !important;
   background-color: rgb(23, 22, 26) !important;
   border: none !important;
-    padding: 10px !important;
+  padding: 10px !important;
+  transition: all 100ms ease-in-out;
 }
-.css-148o527-ItemComponent:hover{
+.react-dropdown-select-item:hover{
   background: rgba(10, 92, 74, 0.9) !important;
 }
 .react-dropdown-select-dropdown{
@@ -91,19 +100,60 @@ html, body {
 .react-dropdown-select-dropdown::-webkit-scrollbar {
   display: none !important;
 }
-
-
-.movies{
+.sorting-container{
+  margin-bottom: 25px;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
 }
+.sort-button{
+  color: #71dbb2be;
+  margin: 0px 25px;
+  padding: 12px 5px;
+  width: 110px;
+  cursor: pointer;
+  transition: all 100ms ease-in-out;
+  font-size: 16px;
+  border-radius: 15px;
+  text-align: center;
+  background-color: rgb(23, 22, 26);
+}
+.sort-button:first-child{
+  margin-left: 0;
+}
+.sort-button:last-child{
+  margin-right: 0;
+}
+.sort-button:hover{
+  color: rgba(242, 247, 246, 0.9) ;
+  background-color: rgba(10, 92, 74, 0.9);
+}
+.sort-button:target{
+text-decoration: underline;
+}
+.active{
+  color: rgba(242, 247, 246, 0.9);
+  background-color: rgba(10, 92, 74, 0.9);
+}
+.movies{
+  display: grid;
+  grid-template-columns:  repeat(6, 200px);
+  column-gap: 30px;
+  grid-column-gap: 30px;
+  row-gap: 20px;
+  grid-row-gap: 20px;
+  justify-content: center;
+  margin-top: 50px;
+  max-width: 1500px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(168, 199, 193, 0.6);
+}
+
 .movie{
   display: flex;
   flex-direction: column;
   width: 200px;
-  margin: 10px 15px;
   color: rgba(242, 247, 246, 0.9);
+  
 }
 .movie-poster{
   width: 200px;
@@ -113,6 +163,9 @@ html, body {
   font-size: 16px;
   font-weight: 600;
 }
+.movie-date{
+  margin: 12px 0;
+}
 .date-and-rating{
   display: flex;
   flex-direction: row;
@@ -120,15 +173,272 @@ html, body {
   align-items: center;
 }
 .rating-container{
-  background-color: #6cecbbbe; 
-  width: 35px;
-  height: 30px;
-  border-radius: 2px;
+  background-color: rgb(23, 22, 26);
+  width: 37px;
+  height: 32px;
+  border-radius: 3px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .movie-rating{
-  color: rgb(0, 0, 0);
+  color: #71dbb2be;
   font-weight: 600;
+}
+.page-changer{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  color: rgba(242, 247, 246, 0.9);
+
+}
+.page-arrow{
+  font-weight: 500;
+  font-size: 18px;
+  padding: 5px;
+  cursor: pointer;
+  transition: all 100ms ease-in-out;
+}
+.current-page{
+  background-color: rgb(23, 22, 26);
+  font-weight: 600;
+  font-size: 18px;
+  padding: 5px;
+  margin: 0 10px;
+}
+.inactive{
+  color: rgba(242, 247, 246, 0.5);
+  cursor: auto;
+}
+.inactive:hover{
+  color: rgba(242, 247, 246, 0.5) !important;
+}
+.page-arrow:hover{
+  color: #71dbb2be;
+}
+
+
+
+
+@media screen and (max-width: 1500px){
+  .movies{
+    grid-template-columns:  repeat(5, 200px);
+  }
+}
+@media screen and (max-width: 1300px){
+  .movies{
+    grid-template-columns:  repeat(5, 180px);
+  }
+  .movie{
+    width: 180px;
+  }
+  .movie-poster{
+    width: 180px;
+  }
+}
+@media screen and (max-width: 1150px){
+  .movies{
+    grid-template-columns:  repeat(4, 180px);
+  }
+  .movie{
+    width: 180px;
+  }
+  .movie-poster{
+    width: 180px;
+  }
+}
+@media screen and (max-width: 1000px){
+  .movies{
+    grid-template-columns:  repeat(3, 180px);
+  }
+
+  .sort-button{
+    margin: 0px 15px;
+  }
+}
+@media screen and (max-width: 800px){
+
+  .form-container{
+    width: 70%;
+    margin-right: 20px;
+  }
+
+  .genre-changer{
+    margin: 2px 20px;
+  }
+  .movies{
+    grid-template-columns:  repeat(3, 150px);
+    column-gap: 20px;
+    grid-column-gap: 20px;
+    row-gap: 15px;
+    grid-row-gap: 15px;
+  }
+  .movie{
+    width: 150px;
+  }
+  .movie-poster{
+    width: 150px;
+  }
+
+}
+
+@media screen and (max-width: 650px){
+  .sort-button{
+    margin: 0px 5px;
+    width: 100px;
+    padding: 10px 5px;
+    font-size: 15px;
+  }
+  .form-container{
+    width: 65%;
+    margin-right: 10px;
+  }
+  .genre-changer{
+    margin: 2px 10px;
+  }
+
+  .movies{
+    grid-template-columns:  repeat(2, 160px);
+  }
+  .movie{
+    width: 160px;
+  }
+  .movie-poster{
+    width: 160px;
+  }
+}
+@media screen and (max-width: 500px){
+  .sort-button{
+    margin: 0px 5px;
+    width: 90px;
+    padding: 10px 5px;
+    font-size: 14px;
+  }
+  .form-container{
+    width: 65%;
+    margin-right: 10px;
+  }
+  .genre-changer{
+    margin: 2px 10px;
+  }
+  .react-dropdown-select-input::placeholder{
+    font-size: 14px !important;
+  }
+  .react-dropdown-select-content {
+    font-size: 14px !important;
+  }
+  .input-search{
+    font-size: 14px;
+  }
+  .input-search::placeholder{
+    font-size: 14px;
+  }
+  .react-dropdown-select-dropdown-handle {
+    margin: 0px 0px 0px 5px !important;
+  }
+  .movies{
+    grid-template-columns:  repeat(2, 150px);
+  }
+  .movie{
+    width: 150px;
+  }
+  .movie-poster{
+    width: 150px;
+  }
+  .movie-title{
+    font-size: 15px;
+  }
+  .movie-date{
+    font-size: 15px;
+  }
+  .movie-rating{
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 450px){
+  .sorting-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 25px;
+    row-gap: 15px;
+  }
+  .sort-button{
+    width: 100%;
+    margin: 0;
+  }
+  .search-and-genre{
+    justify-content: flex-start;
+  }
+  .form-container{
+    width: 60%;
+  }
+  .movies{
+    grid-template-columns:  repeat(2, 140px);
+  }
+  .movie{
+    width: 140px;
+  }
+  .movie-poster{
+    width: 140px;
+  }
+}
+
+@media screen and (max-width: 350px){
+  .sorting-container{
+    column-gap: 10px;
+    row-gap: 10px;
+    grid-template-columns: 0.5fr 0.5fr
+  }
+
+  .search-and-genre{
+    flex-direction: column;
+  }
+  .form-container{
+    width: 100%;
+    margin: 0;
+  }
+  .input-search{
+    padding: 10px 30px;
+  }
+  .genre-changer{
+    margin: 5px 0;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .movies{
+    grid-template-columns:  repeat(2, 110px);
+    margin-top: 20px;
+  }
+  .movie{
+    width: 110px;
+
+  }
+  .movie-poster{
+    width: 110px;
+  }
+
+}
+@media screen and (max-width: 300px){
+  .movies{
+    grid-template-columns:  repeat(1, 200px);
+    row-gap: 25px;
+    grid-row-gap: 25px;
+  }
+  .movie{
+    width: 100%;
+  }
+  .movie-poster{
+    width: 100%;
+  }
+}
+@media screen and (max-width: 250px){
+  .search-container{
+    width: 80%;
+  }
+  .input-search{
+    padding: 10px;
+  }
+  .movies{
+    grid-template-columns:  repeat(1, 130px);
+  }
 }
