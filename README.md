@@ -7,7 +7,7 @@ Sort movies by popularity, genre, rating, release date and title
 Website features:
 * Displays 60 movies per page
 * Different sorting choices
-* Website uses a TMDb API
+* Uses a TMDb API
 * Responsive on all devices
 
 ## Contributing
