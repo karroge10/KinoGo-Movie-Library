@@ -1,0 +1,32 @@
+footer{
+    width: 100%;
+    margin-top: auto;
+	box-shadow: 0px -10px 30px 20px rgba(16, 20, 19, 0.4);
+	text-align: center;
+}
+.footer-made-by {
+	background-color: #111111;
+	padding: 10px 0;
+}
+.made-by {
+    color:rgba(201, 201, 201, 0.9);
+}
+.made-by-link {
+	text-decoration: none;
+    color:#ace6d0be;
+	transition: all 200ms ease-in;
+	margin-left: 5px;
+    letter-spacing: 0.5px;
+}
+.made-by-link:hover {
+	color: rgba(242, 247, 246, 0.9);
+}
+
+@media screen and (max-width: 600px){
+	.made-by span{
+		font-size: 14px;
+	}
+	.made-by-link{
+		font-size: 14px;
+	}
+}
