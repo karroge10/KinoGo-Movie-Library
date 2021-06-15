@@ -1,6 +1,6 @@
 
 # KinoGO | Movie Library
-Sort movies by popularity, genre, rating, release date and name
+Sort movies by popularity, genre, rating, release date and title
 
 ## Details
 
