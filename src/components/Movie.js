@@ -2,7 +2,7 @@ import React from 'react';
 
 const posterAPI = 'https://image.tmdb.org/t/p/w200/'
 
-const Movie = ({ title, poster_path, overview, vote_average, release_date }) => (
+const Movie = ({ title, poster_path, vote_average, release_date }) => (
     
     <div className="movie">
             <img className="movie-poster" src={posterAPI + poster_path} alt={title} />

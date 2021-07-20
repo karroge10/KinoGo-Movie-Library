@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 
-import ReactDOM from 'react-dom'
 
 import Select from "react-dropdown-select";
 
@@ -9,7 +8,6 @@ import Nav from './components/Nav';
 import Footer from './components/Footer'
 
 import { options } from "./options";
-import { getElementError } from '@testing-library/dom';
 
 
 const popularAPI = 'https://api.themoviedb.org/3/discover/movie?api_key=5be75f9f183da240b34367329058206a&sort_by=popularity.desc&include_video=false&vote_count.gte=500'

@@ -426,7 +426,9 @@ text-decoration: underline;
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 25px;
+    grid-column-gap: 25px;
     row-gap: 15px;
+    grid-row-gap: 15px;
   }
   .sort-button{
     width: 100%;
@@ -466,6 +468,8 @@ text-decoration: underline;
   .sorting-container{
     column-gap: 10px;
     row-gap: 10px;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
     grid-template-columns: 0.5fr 0.5fr
   }
 
