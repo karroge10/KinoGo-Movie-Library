@@ -1,4 +1,0 @@
-This is a Brave Rewards publisher verification file.
-
-Domain: kinogo.netlify.app
-Token: ee476627fa697e11a5ca5ebddefdf429835726c44032069e0dafffb308e2fffb
